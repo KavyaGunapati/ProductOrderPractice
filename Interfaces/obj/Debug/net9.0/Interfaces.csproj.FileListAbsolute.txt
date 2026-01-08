@@ -1,0 +1,12 @@
+C:\Users\GunapatiKavya\Desktop\DotNet\Authentication\Practice2\Interfaces\bin\Debug\net9.0\Interfaces.deps.json
+C:\Users\GunapatiKavya\Desktop\DotNet\Authentication\Practice2\Interfaces\bin\Debug\net9.0\Interfaces.dll
+C:\Users\GunapatiKavya\Desktop\DotNet\Authentication\Practice2\Interfaces\bin\Debug\net9.0\Interfaces.pdb
+C:\Users\GunapatiKavya\Desktop\DotNet\Authentication\Practice2\Interfaces\obj\Debug\net9.0\Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\GunapatiKavya\Desktop\DotNet\Authentication\Practice2\Interfaces\obj\Debug\net9.0\Interfaces.AssemblyInfoInputs.cache
+C:\Users\GunapatiKavya\Desktop\DotNet\Authentication\Practice2\Interfaces\obj\Debug\net9.0\Interfaces.AssemblyInfo.cs
+C:\Users\GunapatiKavya\Desktop\DotNet\Authentication\Practice2\Interfaces\obj\Debug\net9.0\Interfaces.csproj.CoreCompileInputs.cache
+C:\Users\GunapatiKavya\Desktop\DotNet\Authentication\Practice2\Interfaces\obj\Debug\net9.0\Interfaces.sourcelink.json
+C:\Users\GunapatiKavya\Desktop\DotNet\Authentication\Practice2\Interfaces\obj\Debug\net9.0\Interfaces.dll
+C:\Users\GunapatiKavya\Desktop\DotNet\Authentication\Practice2\Interfaces\obj\Debug\net9.0\refint\Interfaces.dll
+C:\Users\GunapatiKavya\Desktop\DotNet\Authentication\Practice2\Interfaces\obj\Debug\net9.0\Interfaces.pdb
+C:\Users\GunapatiKavya\Desktop\DotNet\Authentication\Practice2\Interfaces\obj\Debug\net9.0\ref\Interfaces.dll
