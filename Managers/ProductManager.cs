@@ -108,7 +108,11 @@ namespace Managers
                 var existingProduct = await _productRepository.GetByIdAsync(productId);
                 if (existingProduct == null)
                 {
-                    throw new Exception("Product not found.");
+                   return new Result
+                    {
+                        Success = false,
+                        Message = "Product not found."
+                    };
                 }
                 await _productRepository.DeleteAsync(existingProduct);
                 return new Result
