@@ -1,0 +1,38 @@
+# Build directories
+bin/
+obj/
+
+# User-specific files
+*.user
+*.userosscache
+*.sln.docstates
+
+# IDE
+.vs/
+.vscode/
+*.swp
+*.swo
+
+# Visual Studio
+.idea/
+*.suo
+*.sln.iml
+
+# NuGet
+.nuget/
+
+# Local appsettings
+appsettings.Development.json
+appsettings.*.json
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+*.log
+*.bak
