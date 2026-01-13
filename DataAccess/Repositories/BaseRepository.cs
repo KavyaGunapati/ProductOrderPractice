@@ -38,5 +38,9 @@ namespace DataAccess.Repositories
             _context.Set<T>().Update(entity);
             await _context.SaveChangesAsync();
         }
+        public IQueryable<T> Query()
+        {
+            return _context.Set<T>().AsQueryable();
+        }
     }
 }

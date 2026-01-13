@@ -9,7 +9,7 @@ namespace DataAccess.Context
         public DbSet<Category> Categories { get; set; }=null!;
         public DbSet<OrderItem> OrderItems { get; set; }=null!;
         public DbSet<Order> Orders { get; set; }=null!;
-
+        public DbSet<AppUser> AppUsers { get; set; }=null!;
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {    
         }
@@ -31,6 +31,10 @@ namespace DataAccess.Context
             .WithOne(oi => oi.Product)
             .HasForeignKey(oi => oi.ProductId)
             .OnDelete(DeleteBehavior.Cascade);
+            builder.Entity<Order>()
+            .HasOne(o=>o.Payment)
+            .WithOne(p=>p.Order)
+            .HasForeignKey<Payment>(p=>p.OrderId);
         }
     }
 }

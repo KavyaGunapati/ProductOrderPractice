@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "I8sj9mQBMqo=",
+  "dgSpecHash": "/11WrQyxmfI=",
   "success": true,
   "projectFilePath": "C:\\Users\\GunapatiKavya\\Desktop\\DotNet\\Authentication\\Practice2\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
@@ -39,6 +39,8 @@
     "C:\\Users\\GunapatiKavya\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.0.1\\microsoft.identitymodel.tokens.8.0.1.nupkg.sha512",
     "C:\\Users\\GunapatiKavya\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\GunapatiKavya\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\GunapatiKavya\\.nuget\\packages\\restsharp\\105.0.1\\restsharp.105.0.1.nupkg.sha512",
+    "C:\\Users\\GunapatiKavya\\.nuget\\packages\\stripe\\1.12.0\\stripe.1.12.0.nupkg.sha512",
     "C:\\Users\\GunapatiKavya\\.nuget\\packages\\system.clientmodel\\1.0.0\\system.clientmodel.1.0.0.nupkg.sha512",
     "C:\\Users\\GunapatiKavya\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.1\\system.configuration.configurationmanager.6.0.1.nupkg.sha512",
     "C:\\Users\\GunapatiKavya\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.1\\system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
@@ -82,6 +84,30 @@
       "warningLevel": 1,
       "filePath": "C:\\Users\\GunapatiKavya\\Desktop\\DotNet\\Authentication\\Practice2\\DataAccess\\DataAccess.csproj",
       "libraryId": "Microsoft.AspNetCore.Identity.EntityFrameworkCore",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "message": "Package 'RestSharp 105.0.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0'. This package may not be fully compatible with your project.",
+      "projectPath": "C:\\Users\\GunapatiKavya\\Desktop\\DotNet\\Authentication\\Practice2\\DataAccess\\DataAccess.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\GunapatiKavya\\Desktop\\DotNet\\Authentication\\Practice2\\DataAccess\\DataAccess.csproj",
+      "libraryId": "RestSharp",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "message": "Package 'Stripe 1.12.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0'. This package may not be fully compatible with your project.",
+      "projectPath": "C:\\Users\\GunapatiKavya\\Desktop\\DotNet\\Authentication\\Practice2\\DataAccess\\DataAccess.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\GunapatiKavya\\Desktop\\DotNet\\Authentication\\Practice2\\DataAccess\\DataAccess.csproj",
+      "libraryId": "Stripe",
       "targetGraphs": [
         "net9.0"
       ]

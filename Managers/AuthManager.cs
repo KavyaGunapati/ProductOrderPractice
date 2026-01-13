@@ -18,7 +18,7 @@ namespace Managers
             _roleManager = roleManager;
             _tokenProvider = tokenProvider;
         }
-        public async Task<Result<AuthResponse>> AuthenticateAsync(Register register)
+        public async Task<Result<AuthResponse>> RegisterAsync(Register register)
         {
             try
             {

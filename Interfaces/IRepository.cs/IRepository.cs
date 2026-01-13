@@ -7,5 +7,6 @@ namespace Interfaces.IRepository
         Task AddAsync(T entity);
         Task UpdateAsync( T entity);
         Task<bool> DeleteAsync(T entity);
+        IQueryable<T> Query();
     }
 }

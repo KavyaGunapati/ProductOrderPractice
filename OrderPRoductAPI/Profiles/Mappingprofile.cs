@@ -16,6 +16,10 @@ namespace OrderPRoductAPI.Profiles
             );
             CreateMap<Entity.Product, Product>();
             CreateMap<Product, Entity.Product>();
+            CreateMap<Entity.Category, Category>();
+            CreateMap<Category, Entity.Category>();
+            CreateMap<Entity.Order, Order>();
+            CreateMap<Order, Entity.Order>();
         }
     }
 }

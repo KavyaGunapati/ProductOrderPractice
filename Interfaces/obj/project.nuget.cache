@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "P870VGU1NP8=",
+  "dgSpecHash": "I6D9aHWTx9g=",
   "success": true,
   "projectFilePath": "C:\\Users\\GunapatiKavya\\Desktop\\DotNet\\Authentication\\Practice2\\Interfaces\\Interfaces.csproj",
   "expectedPackageFiles": [
@@ -29,6 +29,8 @@
     "C:\\Users\\GunapatiKavya\\.nuget\\packages\\microsoft.identitymodel.protocols\\8.0.1\\microsoft.identitymodel.protocols.8.0.1.nupkg.sha512",
     "C:\\Users\\GunapatiKavya\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\8.0.1\\microsoft.identitymodel.protocols.openidconnect.8.0.1.nupkg.sha512",
     "C:\\Users\\GunapatiKavya\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.0.1\\microsoft.identitymodel.tokens.8.0.1.nupkg.sha512",
+    "C:\\Users\\GunapatiKavya\\.nuget\\packages\\restsharp\\105.0.1\\restsharp.105.0.1.nupkg.sha512",
+    "C:\\Users\\GunapatiKavya\\.nuget\\packages\\stripe\\1.12.0\\stripe.1.12.0.nupkg.sha512",
     "C:\\Users\\GunapatiKavya\\.nuget\\packages\\system.identitymodel.tokens.jwt\\8.0.1\\system.identitymodel.tokens.jwt.8.0.1.nupkg.sha512"
   ],
   "logs": [
@@ -40,6 +42,30 @@
       "warningLevel": 1,
       "filePath": "C:\\Users\\GunapatiKavya\\Desktop\\DotNet\\Authentication\\Practice2\\Interfaces\\Interfaces.csproj",
       "libraryId": "Microsoft.AspNetCore.Authentication.JwtBearer",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "message": "Package 'RestSharp 105.0.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0'. This package may not be fully compatible with your project.",
+      "projectPath": "C:\\Users\\GunapatiKavya\\Desktop\\DotNet\\Authentication\\Practice2\\Interfaces\\Interfaces.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\GunapatiKavya\\Desktop\\DotNet\\Authentication\\Practice2\\Interfaces\\Interfaces.csproj",
+      "libraryId": "RestSharp",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "message": "Package 'Stripe 1.12.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0'. This package may not be fully compatible with your project.",
+      "projectPath": "C:\\Users\\GunapatiKavya\\Desktop\\DotNet\\Authentication\\Practice2\\Interfaces\\Interfaces.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\GunapatiKavya\\Desktop\\DotNet\\Authentication\\Practice2\\Interfaces\\Interfaces.csproj",
+      "libraryId": "Stripe",
       "targetGraphs": [
         "net9.0"
       ]

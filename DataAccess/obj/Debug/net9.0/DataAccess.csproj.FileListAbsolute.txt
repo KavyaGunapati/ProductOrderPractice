@@ -11,3 +11,8 @@ C:\Users\GunapatiKavya\Desktop\DotNet\Authentication\Practice2\DataAccess\obj\De
 C:\Users\GunapatiKavya\Desktop\DotNet\Authentication\Practice2\DataAccess\obj\Debug\net9.0\refint\DataAccess.dll
 C:\Users\GunapatiKavya\Desktop\DotNet\Authentication\Practice2\DataAccess\obj\Debug\net9.0\DataAccess.pdb
 C:\Users\GunapatiKavya\Desktop\DotNet\Authentication\Practice2\DataAccess\obj\Debug\net9.0\ref\DataAccess.dll
+C:\Users\GunapatiKavya\Desktop\DotNet\Authentication\Practice2\DataAccess\bin\Debug\net9.0\Interfaces.dll
+C:\Users\GunapatiKavya\Desktop\DotNet\Authentication\Practice2\DataAccess\bin\Debug\net9.0\Models.dll
+C:\Users\GunapatiKavya\Desktop\DotNet\Authentication\Practice2\DataAccess\bin\Debug\net9.0\Interfaces.pdb
+C:\Users\GunapatiKavya\Desktop\DotNet\Authentication\Practice2\DataAccess\bin\Debug\net9.0\Models.pdb
+C:\Users\GunapatiKavya\Desktop\DotNet\Authentication\Practice2\DataAccess\obj\Debug\net9.0\DataAccess.csproj.Up2Date

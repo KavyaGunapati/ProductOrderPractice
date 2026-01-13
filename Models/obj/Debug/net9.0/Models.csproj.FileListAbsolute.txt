@@ -10,3 +10,4 @@ C:\Users\GunapatiKavya\Desktop\DotNet\Authentication\Practice2\Models\obj\Debug\
 C:\Users\GunapatiKavya\Desktop\DotNet\Authentication\Practice2\Models\obj\Debug\net9.0\refint\Models.dll
 C:\Users\GunapatiKavya\Desktop\DotNet\Authentication\Practice2\Models\obj\Debug\net9.0\Models.pdb
 C:\Users\GunapatiKavya\Desktop\DotNet\Authentication\Practice2\Models\obj\Debug\net9.0\ref\Models.dll
+C:\Users\GunapatiKavya\Desktop\DotNet\Authentication\Practice2\Models\obj\Debug\net9.0\Models.csproj.AssemblyReference.cache

@@ -430,6 +430,31 @@
           }
         }
       },
+      "RestSharp/105.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net4/RestSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net4/RestSharp.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Stripe/1.12.0": {
+        "type": "package",
+        "dependencies": {
+          "RestSharp": "105.0.1"
+        },
+        "compile": {
+          "lib/net40/Stripe.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Stripe.dll": {}
+        }
+      },
       "System.IdentityModel.Tokens.Jwt/8.0.1": {
         "type": "package",
         "dependencies": {
@@ -1086,6 +1111,42 @@
         "microsoft.identitymodel.tokens.nuspec"
       ]
     },
+    "RestSharp/105.0.1": {
+      "sha512": "2jEivNmSZFsK/iyoOu0l9+pEM2hXLQCvOQdLgQcr92cdnirl2xm+Wddy7lP6JTwZSLjAQ1ogHlal1tLu5hfZPw==",
+      "type": "package",
+      "path": "restsharp/105.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35-client/RestSharp.dll",
+        "lib/net35-client/RestSharp.xml",
+        "lib/net35/RestSharp.dll",
+        "lib/net35/RestSharp.xml",
+        "lib/net4-client/RestSharp.dll",
+        "lib/net4-client/RestSharp.xml",
+        "lib/net4/RestSharp.dll",
+        "lib/net4/RestSharp.xml",
+        "lib/sl4-wp71/RestSharp.WindowsPhone.dll",
+        "lib/sl4-wp71/RestSharp.WindowsPhone.xml",
+        "lib/sl4/RestSharp.Silverlight.dll",
+        "lib/sl4/RestSharp.Silverlight.xml",
+        "readme.txt",
+        "restsharp.105.0.1.nupkg.sha512",
+        "restsharp.nuspec"
+      ]
+    },
+    "Stripe/1.12.0": {
+      "sha512": "IZ4xMz4vWqgH7RUyQMU/bljlr+gr/r/EMKUIg/PjTVjuyuXoXjbalgDnfDZ77GogCzJME3XIP1anBIMbaF4gvg==",
+      "type": "package",
+      "path": "stripe/1.12.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Stripe.dll",
+        "stripe.1.12.0.nupkg.sha512",
+        "stripe.nuspec"
+      ]
+    },
     "System.IdentityModel.Tokens.Jwt/8.0.1": {
       "sha512": "GJw3bYkWpOgvN3tJo5X4lYUeIFA2HD293FPUhKmp7qxS+g5ywAb34Dnd3cDAFLkcMohy5XTpoaZ4uAHuw0uSPQ==",
       "type": "package",
@@ -1114,7 +1175,8 @@
     "net9.0": [
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.18.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.0",
-      "Microsoft.Extensions.Configuration.Abstractions >= 10.0.1"
+      "Microsoft.Extensions.Configuration.Abstractions >= 10.0.1",
+      "Stripe >= 1.12.0"
     ]
   },
   "packageFolders": {
@@ -1172,6 +1234,10 @@
           "Microsoft.Extensions.Configuration.Abstractions": {
             "target": "Package",
             "version": "[10.0.1, )"
+          },
+          "Stripe": {
+            "target": "Package",
+            "version": "[1.12.0, )"
           }
         },
         "imports": [
@@ -1201,6 +1267,26 @@
       "warningLevel": 1,
       "message": "Models depends on Microsoft.AspNetCore.Authentication.JwtBearer (>= 8.18.0) but Microsoft.AspNetCore.Authentication.JwtBearer 8.18.0 was not found. Microsoft.AspNetCore.Authentication.JwtBearer 9.0.0 was resolved instead.",
       "libraryId": "Microsoft.AspNetCore.Authentication.JwtBearer",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'RestSharp 105.0.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0'. This package may not be fully compatible with your project.",
+      "libraryId": "RestSharp",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Stripe 1.12.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Stripe",
       "targetGraphs": [
         "net9.0"
       ]
