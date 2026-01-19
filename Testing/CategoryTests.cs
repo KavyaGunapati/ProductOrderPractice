@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using AutoMapper;
 using Interfaces.IManager;
 using Moq;
@@ -20,19 +21,34 @@ public class Tests
     private Mock<IRepository<Entity.Category>> _categoryRepositoryMock;
     private Mock<IMapper> _mapperMock;
     private Mock<IInMemoryStore> _inMemoryStoreMock;
+=======
+﻿namespace Testing;
+[TestFixture]
+public class Tests
+{
+    private Mock<IRepository<Category>> _categoryRepositoryMock;
+    private Mock<IMapper> _mapperMock;
+>>>>>>> 5d1d520e5503a32fb506394459fbcb1f39cd95af
     private ICategoryManager _categoryManager;
     [SetUp]
     public void Setup()
     {
+<<<<<<< HEAD
         _categoryRepositoryMock = new Mock<IRepository<Entity.Category>>();
         _mapperMock = new Mock<IMapper>();
         _inMemoryStoreMock = new Mock<IInMemoryStore>();
         _categoryManager = new CategoryManager(_categoryRepositoryMock.Object, _mapperMock.Object, _inMemoryStoreMock.Object);
+=======
+        _categoryRepositoryMock=new Mock<IRepository<Category>>();
+        _mapperMock=new Mock<IMapper>();
+        _categoryManager=new ICategoryManager(_categoryRepositoryMock.Object,_mapperMock.Object);
+>>>>>>> 5d1d520e5503a32fb506394459fbcb1f39cd95af
     }
 
     [Test]
     public async Task GetAllCategoriesAsync_ReturnsMappedDtos_AndSuccess()
     {
+<<<<<<< HEAD
         //Arrange
         var categories = new List<Entity.Category>
        {
@@ -250,4 +266,28 @@ public class Tests
         _categoryRepositoryMock.Verify(r=>r.GetByIdAsync(1),Times.Once);
         _categoryRepositoryMock.Verify(r=>r.DeleteAsync(It.IsAny<Entity.Category>()),Times.Once);
     }
+=======
+        // Arrange
+        var categories=new List<Category>
+        {
+            new Category{Id=1,Name="Electronics"},
+            new Category{Id=2,Name="Books"}
+        };
+        _categoryRepositoryMock.SetUp(repo=>repo.GetAllAsync()).ReturnsAsync(categories);
+        var categoryDtos=new List<Category>
+        {
+            new Category{Id=1,Name="Electronics"},
+            new Category{Id=2,Name="Books"}
+        };
+        _mapperMock.SetUp(m=>m.Map<IEnumerable<Category>>(It.IsAny<IEnumerable<Category>>())).ReturnsAsync(categoryDtos);
+        // Act
+        var result=await _categoryManager.GetAllCategoriesAsync();
+        // Assert
+        Assert.IsTrue(result.Success);
+        Assert.AreEqual(2,result.Data.Count());
+        _categoryRepositoryMock.Verify(repo=>repo.GetAllAsync(),Times.Once);
+        _mapperMock.Verify(m=>m.Map<IEnumerable<Category>>(It.IsAny<IEnumerable<Category>>()),Times.Once);
+
+    }
+>>>>>>> 5d1d520e5503a32fb506394459fbcb1f39cd95af
 }
