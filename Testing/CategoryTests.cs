@@ -8,9 +8,8 @@ using Models.DTOs;
 using Managers;
 using System.Collections;
 using System.Runtime.CompilerServices;
-using System.Security.Cryptography.X509Certificates;
 using System.ComponentModel.DataAnnotations;
-using Microsoft.VisualBasic;
+using Interfaces.IManager;
 
 namespace Testing;
 
@@ -19,15 +18,15 @@ public class Tests
 {
     private Mock<IRepository<Entity.Category>> _categoryRepositoryMock;
     private Mock<IMapper> _mapperMock;
-    private Mock<IInMemoryStore> _inMemoryStoreMock;
+    //private Mock<IInMemoryStore> _inMemoryStoreMock;
     private ICategoryManager _categoryManager;
     [SetUp]
     public void Setup()
     {
         _categoryRepositoryMock = new Mock<IRepository<Entity.Category>>();
         _mapperMock = new Mock<IMapper>();
-        _inMemoryStoreMock = new Mock<IInMemoryStore>();
-        _categoryManager = new CategoryManager(_categoryRepositoryMock.Object, _mapperMock.Object, _inMemoryStoreMock.Object);
+        //_inMemoryStoreMock = new Mock<IInMemoryStore>();
+        _categoryManager = new CategoryManager(_categoryRepositoryMock.Object, _mapperMock.Object /*, _inMemoryStoreMock.Object*/);
     }
 
     [Test]
@@ -39,7 +38,7 @@ public class Tests
            new Entity.Category{Id=1,CategoryName="Electronics"},
            new Entity.Category{Id=2,CategoryName="Books"}
        };
-        _inMemoryStoreMock.Setup(store => store.TryGet(It.IsAny<string>(), out It.Ref<IEnumerable<Category>>.IsAny)).Returns(false);
+        //_inMemoryStoreMock.Setup(store => store.TryGet(It.IsAny<string>(), out It.Ref<IEnumerable<Category>>.IsAny)).Returns(false);
         _categoryRepositoryMock.Setup(repo => repo.GetAllAsync()).ReturnsAsync(categories);
         var categoryDtos = new List<Category>
        {
@@ -61,7 +60,7 @@ public class Tests
     {
         //Arrange
         var categoryEntity = new Entity.Category { Id = 1, CategoryName = "Electronics" };
-        _inMemoryStoreMock.Setup(s => s.TryGet(It.IsAny<string>(), out It.Ref<Category>.IsAny)).Returns(false);
+        //_inMemoryStoreMock.Setup(s => s.TryGet(It.IsAny<string>(), out It.Ref<Category>.IsAny)).Returns(false);
         _categoryRepositoryMock.Setup(r => r.GetByIdAsync(1)).ReturnsAsync(categoryEntity);
         var categoryDto = new Category { Id = 1, CategoryName = "Electronics" };
         _mapperMock.Setup(m => m.Map<Category>(It.IsAny<Entity.Category>())).Returns(categoryDto);
@@ -118,30 +117,30 @@ public class Tests
         _categoryRepositoryMock.Verify(r => r.GetByIdAsync(1), Times.Once);
         _categoryRepositoryMock.Verify(r => r.DeleteAsync(existingEntity), Times.Once);
     }
-    [Test]
-    public async Task GetAllCategoriesAsync_ReturnsFromCache_AndSuccess()
-    {
-        //Arrange
-        IEnumerable<Category> cachedCategories = new List<Category>
-        {
-            new Category{Id=1,CategoryName="Electronics"},
-            new Category{Id=2,CategoryName="Books"}
-        };
-        _inMemoryStoreMock.Setup(s => s.TryGet(It.IsAny<string>(), out cachedCategories)).Returns(true);
-        //Act
-        var result = await _categoryManager.GetAllCategoriesAsync();
-        //Assert
-        Assert.That(result.Success, Is.True);
-        Assert.That(result.Data, Is.Not.Null);
-        Assert.That(result.Data!.Count(), Is.EqualTo(2));
-        _categoryRepositoryMock.Verify(r => r.GetAllAsync(), Times.Never);
-        _mapperMock.Verify(m => m.Map<IEnumerable<Category>>(It.IsAny<IEnumerable<Entity.Category>>()), Times.Never);
-    }
+    // [Test]
+    // public async Task GetAllCategoriesAsync_ReturnsFromCache_AndSuccess()
+    // {
+    //     //Arrange
+    //     IEnumerable<Category> cachedCategories = new List<Category>
+    //     {
+    //         new Category{Id=1,CategoryName="Electronics"},
+    //         new Category{Id=2,CategoryName="Books"}
+    //     };
+    //    // _inMemoryStoreMock.Setup(s => s.TryGet(It.IsAny<string>(), out cachedCategories)).Returns(true);
+    //     //Act
+    //     var result = await _categoryManager.GetAllCategoriesAsync();
+    //     //Assert
+    //     Assert.That(result.Success, Is.True);
+    //     Assert.That(result.Data, Is.Not.Null);
+    //     Assert.That(result.Data!.Count(), Is.EqualTo(2));
+    //     _categoryRepositoryMock.Verify(r => r.GetAllAsync(), Times.Never);
+    //     _mapperMock.Verify(m => m.Map<IEnumerable<Category>>(It.IsAny<IEnumerable<Entity.Category>>()), Times.Never);
+    // }
     [Test]
     public async Task GetAllCategoriesAsync_ReturnsDb_AndFailsWhenNotFound()
     {
         //Arrange
-        _inMemoryStoreMock.Setup(s => s.TryGet(It.IsAny<string>(), out It.Ref<IEnumerable<Category>>.IsAny)).Returns(false);
+        //_inMemoryStoreMock.Setup(s => s.TryGet(It.IsAny<string>(), out It.Ref<IEnumerable<Category>>.IsAny)).Returns(false);
         _categoryRepositoryMock.Setup(r => r.GetAllAsync()).ReturnsAsync(new List<Entity.Category>());
         //Act
         var result = await _categoryManager.GetAllCategoriesAsync();
@@ -151,25 +150,25 @@ public class Tests
         Assert.That(result.Data!.Count(), Is.EqualTo(0));
         _categoryRepositoryMock.Verify(r => r.GetAllAsync(), Times.Once);
     }
-    [Test]
-    public async Task GetCategoryByIdAsync_ReturnsFromCache_AndSuccess()
-    {
-        var cachedCategory = new Category { Id = 1, CategoryName = "Electronics" };
-        _inMemoryStoreMock.Setup(s => s.TryGet(It.IsAny<string>(), out cachedCategory)).Returns(true);
-        //Act
-        var result = await _categoryManager.GetCategoryByIdAsync(1);
-        //Assert
-        Assert.That(result.Success, Is.True);
-        Assert.That(result.Data, Is.Not.Null);
-        Assert.That(result.Data!.Id, Is.EqualTo(1));
-        _categoryRepositoryMock.Verify(r => r.GetByIdAsync(It.IsAny<int>()), Times.Never);
-        _mapperMock.Verify(m => m.Map<Category>(It.IsAny<Entity.Category>()), Times.Never);
-    }
+    // [Test]
+    // public async Task GetCategoryByIdAsync_ReturnsFromCache_AndSuccess()
+    // {
+    //     var cachedCategory = new Category { Id = 1, CategoryName = "Electronics" };
+    //     //_inMemoryStoreMock.Setup(s => s.TryGet(It.IsAny<string>(), out cachedCategory)).Returns(true);
+    //     //Act
+    //     var result = await _categoryManager.GetCategoryByIdAsync(1);
+    //     //Assert
+    //     Assert.That(result.Success, Is.True);
+    //     Assert.That(result.Data, Is.Not.Null);
+    //     Assert.That(result.Data!.Id, Is.EqualTo(1));
+    //     _categoryRepositoryMock.Verify(r => r.GetByIdAsync(It.IsAny<int>()), Times.Never);
+    //     _mapperMock.Verify(m => m.Map<Category>(It.IsAny<Entity.Category>()), Times.Never);
+    // }
     [Test]
     public async Task GetCategoryByIdAsync_ReturnsDb_AndFailsWhenNotFound()
     {
         //Arrange
-        _inMemoryStoreMock.Setup(s => s.TryGet(It.IsAny<string>(), out It.Ref<Category>.IsAny)).Returns(false);
+        //_inMemoryStoreMock.Setup(s => s.TryGet(It.IsAny<string>(), out It.Ref<Category>.IsAny)).Returns(false);
         _categoryRepositoryMock.Setup(r => r.GetByIdAsync(1)).ReturnsAsync((Entity.Category?)null);
         //Act
         var result = await _categoryManager.GetCategoryByIdAsync(1);

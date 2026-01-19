@@ -33,13 +33,22 @@ namespace Managers
         }
         public async Task<Result> AddCategoryAsync(Category category)
         {
-            var entity=_mapper.Map<Entity.Category>(category);
-            await _categoryRepository.AddAsync(entity);
-            return new Result{Success=true,Message="Category added successfully"};
+            try
+            {
+                var entity=_mapper.Map<Entity.Category>(category);
+                await _categoryRepository.AddAsync(entity);
+                return new Result{Success=true,Message="Category added successfully"};
+            }
+            catch(Exception ex)
+            {
+                return new Result{Success=false,Message=$"An error occurred while adding the category: {ex.Message}"};
+            }
         }
         public async Task<Result> UpdateCategoryAsync(Category category)
         {
-            var existingEntity=await _categoryRepository.GetByIdAsync(category.Id);
+            try
+            {
+                var existingEntity=await _categoryRepository.GetByIdAsync(category.Id);
             if(existingEntity==null)
             {
                 return new Result{Success=false,Message="Category not found"};
@@ -47,16 +56,27 @@ namespace Managers
             var entity=_mapper.Map<Entity.Category>(category);
             await _categoryRepository.UpdateAsync(entity);
             return new Result{Success=true,Message="Category updated successfully"};
+            }catch(Exception ex)
+            {
+                return new Result{Success=false,Message=$"An error occurred while updating the category: {ex.Message}"};
+            }
         }
         public async Task<Result> DeleteCategoryAsync(int id)
         {
-            var existingEntity=await _categoryRepository.GetByIdAsync(id);
+            try
+            {
+                var existingEntity=await _categoryRepository.GetByIdAsync(id);
             if(existingEntity==null)
             {
                 return new Result{Success=false,Message="Category not found"};
             }
             await _categoryRepository.DeleteAsync(existingEntity);
             return new Result{Success=true,Message="Category deleted successfully"};
+            }
+            catch(Exception ex)
+            {
+                return new Result{Success=false,Message=$"An error occurred while deleting the category: {ex.Message}"};
+            }
         }
     }
 }
